@@ -1,6 +1,18 @@
-# Pastel-Release
+# Pastel-Cezanne-Mainnet-Release
 
 ## Cezanne v1.1.1
+
+### This upgrade includes:
+
+- Improvements to NFT Minting and Collections
+- Support for NFT Transfers, Trades, and Auctions
+- Interchain account identification via PastelIDs
+- Cross-chain network access via Web3 APIs
+- Dramatic upgrades to Sense (our near-duplicate NFT detection protocol)
+- Enhancements to Cascade (our distributed NFT storage protocol)
+- User-friendly utility services via PastelUp
+- Improvements to network optimization and security
+- Added extra validation for SuperNode payment transaction.
 
 https://download.pastel.network/#latest/
 
@@ -10,8 +22,9 @@ https://download.pastel.network/#latest/
 * dd-service: https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
 * rq-service: https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
 
+_NOTE: Upgrade instructions for various client types are listed below._
 
-### 1. Update pre-Murata Wallet to Cezanne Walletnode
+### 1. WalletNode: Update pre-Murata WalletNode to Cezanne Walletnode
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
@@ -22,10 +35,9 @@ https://download.pastel.network/#latest/
 4. Start everything
    * `pastelup start walletnode`
 
-### 2. Update pre-Murata MNs to Cezanne SN
+### 2. SuperNode: Update pre-Murata SuperNode to Cezanne SuperNode
 
-> NOTE: this assumes that MN was set in COLD/HOT mode
-> where, 
+> NOTE: SuperNode Update assumes that SuperNode is established via a COLD/HOT mode set-up where:
 >   * `COLD` node has:
 >     * pastel node (`pasteld` and `pastel-cli`) set as simple node (not as `masternode`),
 >     * wallet with collateral transaction for SN(s) that ran on `HOT` node(s) 
