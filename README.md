@@ -14,6 +14,8 @@
 - Improvements to network optimization and security
 - Added extra validation for SuperNode payment transaction.
 
+_Release files:_
+
 https://download.pastel.network/#latest/
 
 * pastelup: https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
