@@ -18,17 +18,32 @@ This is a stable release suitable for use on Mainnet.
 - Improvements to network optimization and security
 - Added extra validation for SuperNode payment transaction.
 
-## Release Files:
+## Release Files
 
-https://download.pastel.network/#latest/
-
+* All required release files can be found here: https://download.pastel.network/#latest/
 * pastelup: https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
 * paslte-core: https://github.com/pastelnetwork/pastel/releases/tag/v1.1.1
 * goNode: https://github.com/pastelnetwork/gonode/releases/tag/v1.1.1
 * dd-service: https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
 * rq-service: https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
 
-_NOTE: Upgrade instructions for various client types are listed below._
+## Requirements
+
+The following requirements are required to run the node natively.
+
+# Hardware 
+
+The following table shows the recommended hardware requirements for the running node on the mainnet.
+
+| Node | WalletNode | SuperNode | 
+| ----------- | ----------- |
+| Memory: 16Gb | Memory: 16Gb+ | 
+
+
+
+
+
+_NOTE: Upgrade guides for various client types can be found below._
 
 ### 1. WalletNode: Update pre-Murata WalletNode to Cezanne Walletnode
 
