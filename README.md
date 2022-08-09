@@ -31,7 +31,7 @@ This is a stable release suitable for use on Mainnet.
 
 The following requirements are required to run the node natively.
 
-# Hardware 
+### Hardware 
 
 The following table shows the recommended hardware requirements for the running node on the mainnet.
 
@@ -41,14 +41,14 @@ The following table shows the recommended hardware requirements for the running 
 | Storage: 50Gb | Storage: 1Tb | Storage: 1Tb+ | 
 | Network: 5Gbps+	| Network: 5Gbps+ | Network: 5Gbps+ |
 
-# OS / Software 
+### OS / Software 
 * Ubuntu 20.04 Required for running WalletNode and SuperNode
 * Go Installed
 * UPX Installed
 
 _NOTE: Upgrade guides for various client types can be found below._
 
-### 1. WalletNode: Update pre-Murata WalletNode to Cezanne Walletnode
+## 1. WalletNode: Update pre-Murata WalletNode to Cezanne Walletnode
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
@@ -59,7 +59,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 4. Start everything
    * `pastelup start walletnode`
 
-### 2. SuperNode: Update pre-Murata SuperNode to Cezanne SuperNode
+## 2. SuperNode: Update pre-Murata SuperNode to Cezanne SuperNode
 
 > NOTE: SuperNode Update assumes that SuperNode is established via a COLD/HOT mode set-up where:
 >   * `COLD` node has:
