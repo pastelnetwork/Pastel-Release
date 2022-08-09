@@ -1,5 +1,17 @@
 # Pastel-Release
 
+## Cezanne v1.1.1
+
+https://download.pastel.network/#latest/
+
+https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
+
+https://github.com/pastelnetwork/pastel/releases/tag/v1.1.1
+https://github.com/pastelnetwork/gonode/releases/tag/v1.1.1
+https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
+https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
+
+
 ### 1. Update pre-Murata Wallet to Cezanne Walletnode
 
 1. Download `pastelup` to Wallet host
