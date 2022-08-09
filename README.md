@@ -1,5 +1,16 @@
 # Pastel-Release
 
+### 1. Update pre-Murata Wallet to Cezanne Walletnode
+
+1. Download `pastelup` to Wallet host
+   * https://download.pastel.network/#latest/
+2. Stop node
+   * `pastelup stop node`
+3. Install Pastel Walletnode 
+   * `pastelup install walletnode -r latest -n mainnet -f`
+4. Start everything
+   * `pastelup start walletnode`
+
 ### 2. Update pre-Murata MNs to Cezanne SN
 
 > NOTE: this assumes that MN was set in COLD/HOT mode
