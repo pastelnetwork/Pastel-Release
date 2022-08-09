@@ -36,8 +36,8 @@ The following requirements are required to run the node natively.
 The following table shows the recommended hardware requirements for the running node on the mainnet.
 
 | Node | WalletNode | SuperNode | 
-| ----------- | ----------- |
-| Memory: 16Gb | Memory: 16Gb+ | 
+| ----------- | ----------- | ----------- |
+| Memory: 16Gb | Memory: 16Gb+ | Memory: 16Gb+ | 
 
 
 
