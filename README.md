@@ -4,12 +4,12 @@
 
 https://download.pastel.network/#latest/
 
-https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
+* pastelup: https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
 
-https://github.com/pastelnetwork/pastel/releases/tag/v1.1.1
-https://github.com/pastelnetwork/gonode/releases/tag/v1.1.1
-https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
-https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
+* paslte-core: https://github.com/pastelnetwork/pastel/releases/tag/v1.1.1
+* goNode: https://github.com/pastelnetwork/gonode/releases/tag/v1.1.1
+* dd-service: https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
+* rq-service: https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
 
 
 ### 1. Update pre-Murata Wallet to Cezanne Walletnode
