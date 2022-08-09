@@ -35,13 +35,16 @@ The following requirements are required to run the node natively.
 
 The following table shows the recommended hardware requirements for the running node on the mainnet.
 
-| Node | WalletNode | SuperNode | 
+| Full Node | WalletNode | SuperNode | 
 | ----------- | ----------- | ----------- |
-| Memory: 16Gb | Memory: 16Gb+ | Memory: 16Gb+ | 
+| Memory: 8Gb | Memory: 16Gb | Memory: 16Gb+ | 
+| Storage: 50Gb | Storage: 1Tb | Storage: 1Tb+ | 
+| Network: 5Gbps+	| Network: 5Gbps+ | Network: 5Gbps+ |
 
-
-
-
+# OS / Software 
+* Ubuntu 20.04 Required for running WalletNode and SuperNode
+* Go Installed
+* UPX Installed
 
 _NOTE: Upgrade guides for various client types can be found below._
 
