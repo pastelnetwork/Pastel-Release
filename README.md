@@ -1,6 +1,8 @@
-# Pastel-Cezanne-Mainnet-Release
+# Pastel Chain Releases
 
-## Cezanne v1.1.1
+## Pastel Mainnet Release: Cezanne v1.1.1
+
+##This is a stable release suitable for use on Mainnet.
 
 ### This upgrade includes:
 
@@ -14,7 +16,7 @@
 - Improvements to network optimization and security
 - Added extra validation for SuperNode payment transaction.
 
-_Release files:_
+##Release Files:
 
 https://download.pastel.network/#latest/
 
