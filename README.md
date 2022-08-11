@@ -42,7 +42,7 @@ The following table shows the recommended hardware requirements for the running 
 | Network: 5Gbps+	| Network: 5Gbps+ | Network: 5Gbps+ |
 
 ### OS / Software 
-* Ubuntu 20.04 Required for running WalletNode and SuperNode
+* Ubuntu 20.04 Required for running a SuperNode (Note: Full Node and WalletNode clients compatible on MacOS, Windows, and Linux)
 * Go Installed
 * UPX Installed
 
