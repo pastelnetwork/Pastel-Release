@@ -8,12 +8,12 @@ It also contains hassle-free guides and scripts for getting started and managing
 
 ## Release Files
 
-* All required release files can be found here: https://download.pastel.network/#latest/
-* pastelup: https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
-* paslte-core: https://github.com/pastelnetwork/pastel/releases/tag/v1.1.1
-* goNode: https://github.com/pastelnetwork/gonode/releases/tag/v1.1.1
-* dd-service: https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
-* rq-service: https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
+* All required release files can be found [here](https://download.pastel.network/#latest/)
+* [pastelup](https://github.com/pastelnetwork/pastelup/releases)
+* [paslel-core](https://github.com/pastelnetwork/pastel/releases)
+* [goNode](https://github.com/pastelnetwork/gonode/releases)
+* [dd-service](https://github.com/pastelnetwork/dd-service/releases)
+* [rq-service](https://github.com/pastelnetwork/rqservice/releases)
 
 ## Requirements
 
