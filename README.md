@@ -2,9 +2,9 @@
 
 ---
 
-The repository hosts Injective Chain releases of binary artifacts.
+The repository hosts Pastel Chain releases.
 
-It also contains hassle-free guides and scripts for getting started and managing Injective Chain node
+It also contains hassle-free guides and scripts for getting started and managing Pastel Chain clients.
 
 ## Release Files
 
