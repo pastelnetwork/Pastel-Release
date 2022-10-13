@@ -2,21 +2,9 @@
 
 ---
 
-## Pastel Mainnet Release: Cezanne v1.1.1
+The repository hosts Injective Chain releases of binary artifacts.
 
-This is a stable release suitable for use on Mainnet.
-
-### This upgrade includes:
-
-- Improvements to NFT Minting and Collections
-- Support for NFT Transfers, Trades, and Auctions
-- Interchain account identification via PastelIDs
-- Cross-chain network access via Web3 APIs
-- Dramatic upgrades to Sense (our near-duplicate NFT detection protocol)
-- Enhancements to Cascade (our distributed NFT storage protocol)
-- User-friendly utility services via PastelUp
-- Improvements to network optimization and security
-- Added extra validation for SuperNode payment transaction.
+It also contains hassle-free guides and scripts for getting started and managing Injective Chain node
 
 ## Release Files
 
@@ -48,7 +36,7 @@ The following table shows the recommended hardware requirements for the running 
 
 _NOTE: Upgrade guides for various client types can be found below._
 
-## 1. WalletNode: Update pre-Murata WalletNode to Cezanne Walletnode
+## 1. WalletNode: Update existing client to latest Pastel Chain version
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
@@ -58,8 +46,8 @@ _NOTE: Upgrade guides for various client types can be found below._
    * `pastelup install walletnode -r latest -n mainnet -f`
 4. Start everything
    * `pastelup start walletnode`
-
-## 2. SuperNode: Update pre-Murata SuperNode to Cezanne SuperNode
+ 
+## 2. SuperNode: Update existing client to latest Pastel Chain version
 
 > NOTE: SuperNode Update assumes that SuperNode is established via a COLD/HOT mode set-up where:
 >   * `COLD` node has:
