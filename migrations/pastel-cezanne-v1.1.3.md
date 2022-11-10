@@ -1,4 +1,4 @@
-## Pastel Mainnet Release: Cezanne v1.1.1
+## Pastel Mainnet Release: Cezanne v1.1.3
 
 This is a stable release suitable for use on Mainnet.
 
@@ -10,7 +10,7 @@ The following document describes the necessary steps involved that full node and
 - Support for NFT Transfers, Trades, and Auctions
 - Interchain account identification via PastelIDs
 - Cross-chain network access via Web3 APIs
-- Dramatic upgrades to Sense (our near-duplicate NFT detection protocol)
+- Upgrades to Sense (our near-duplicate NFT detection protocol)
 - Enhancements to Cascade (our distributed NFT storage protocol)
 - User-friendly utility services via PastelUp
 - Improvements to network optimization and security
@@ -18,10 +18,10 @@ The following document describes the necessary steps involved that full node and
 
 ## Release Files
 
-* All required release files can be found here: https://download.pastel.network/#history/1.1.1/
-* pastelup: https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.1
-* pastel-core: https://github.com/pastelnetwork/pastel/releases/tag/v1.1.1
-* goNode: https://github.com/pastelnetwork/gonode/releases/tag/v1.1.1
+* All required release files can be found here: https://download.pastel.network/#latest/
+* pastelup: https://github.com/pastelnetwork/pastelup/releases/tag/v1.1.3
+* pastel-core: https://github.com/pastelnetwork/pastel/releases/tag/v1.1.3
+* goNode: https://github.com/pastelnetwork/gonode/releases/tag/v1.1.3
 * dd-service: https://github.com/pastelnetwork/dd-service/releases/tag/v1.1.1
 * rq-service: https://github.com/pastelnetwork/rqservice/releases/tag/v1.1.1
 
@@ -46,18 +46,18 @@ The following table shows the recommended hardware requirements for the running 
 
 _NOTE: Upgrade guides for various client types can be found below._
 
-## 1. WalletNode: Update pre-Murata WalletNode to Cezanne Walletnode
+## 1. WalletNode: Update to Cezanne v1.1.3 Walletnode
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
 2. Stop node
-   * `pastelup stop walletnode`
+   * `pastelup stop node`
 3. Install Pastel Walletnode 
    * `pastelup install walletnode -r latest -n mainnet -f`
 4. Start everything
    * `pastelup start walletnode`
 
-## 2. SuperNode: Update pre-Murata SuperNode to Cezanne SuperNode
+## 2. SuperNode: Update to Cezanne v1.1.3 SuperNode
 
 > NOTE: SuperNode Update assumes that SuperNode is established via a COLD/HOT mode set-up where:
 >   * `COLD` node has:
@@ -95,7 +95,7 @@ _NOTE: Upgrade guides for various client types can be found below._
    * from `HOT` node itself
      * `pastelup install supernode -r latest -n mainnet -f`
    * OR from `LOCAL` host
-     * `pastelup install supernode remote -r latest -n mainnet -f -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
+     * `pastelup install supernode -r latest -n mainnet -f -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
 6. Initialize supernode, this step is only needed to create new version of `masternode.conf` on `HOT` node and to create new version of PastelID (PastelID in Cezanne has new field) 
    * from `HOT` node itself
      * `pastelup init supernode --name MN-NAME --new --txid=COLLATERAL-TX-ID --ind=COLLATERAL-TX-IND --pkey=MN-PRIV-KEY --passphrase=<passhrase for new PastelID> --skip-collateral-validation`
