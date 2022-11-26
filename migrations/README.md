@@ -4,4 +4,6 @@
 
 ## This directory contains major upgrade migration instructions.
 
-* [Upgrading from pre-Murata to Cezanne](https://github.com/pastelnetwork/pastel-chain-releases/blob/master/migrations/pastel-cezanne-v1.1.1.md)
+* [Upgrading from previous or Pre-Murata Chains to Cezanne v1.1.1](https://github.com/pastelnetwork/pastel-chain-releases/blob/master/migrations/pastel-cezanne-v1.1.1.md)
+* [Upgrading to Cezanne v.1.1.2](https://github.com/pastelnetwork/pastel-chain-releases/blob/master/migrations/pastel-cezanne-v1.1.2.md)
+* [Upgrading to Cezanne v.1.1.3](https://github.com/pastelnetwork/pastel-chain-releases/blob/master/migrations/pastel-cezanne-v1.1.3.md)
