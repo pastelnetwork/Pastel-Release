@@ -1,6 +1,6 @@
 # Leveraging PastelUp 
 
-##PastelUp is a utility service for easy installation of Node, WalletNode, and SuperNode clients##
+## PastelUp is a utility service for easy installation of Node, WalletNode, and SuperNode clients
 
 To run clients on the Pastel Network using PastelUp, follow the official guide [here][pastel-up-link]
 
