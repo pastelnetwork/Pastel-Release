@@ -1,6 +1,6 @@
 # Join The Pastel Network
 
-To set up a new node and join the Pastel Network Mainnet, follow the official guide [join the mainnet][join-mainnet-link]
+To set up a new node and join the Pastel Network Mainnet, follow the official guide to [join the mainnet][join-mainnet-link]
 
 If you need help, join our [Discord community][discord-community-link]
 
