@@ -2,7 +2,7 @@
 
 To become an active SuperNode on the Pastel Network, follow the official guide [here][join-mainnet-link]
 
-Learn more about the benefits of becoming a SuperNode [here][join-mainnet-link]
+Learn more about the benefits of becoming a SuperNode [here][super-node benefits]
 
 If you need help, join our [Discord community][discord-community-link]
 
