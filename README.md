@@ -42,15 +42,19 @@ _NOTE: Upgrade guides for various client types can be found below._
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
-2. Run the follwoing command
-```shell
-./pastelup update walletnode
-```
+2. Run the update command
+  ```shell
+  ./pastelup update walletnode
+  ```
   * The above command will update the following applications:
     * pasteld
     * pastel-cli
     * rq-server
     * walletnode
+3. Start all services
+  ```shell
+  ./pastelup start walletnode
+  ```
  
 ## 2. SuperNode: Update existing client to latest Pastel Chain version
 
@@ -63,79 +67,86 @@ _NOTE: Upgrade guides for various client types can be found below._
 >     * pastel node (`pasteld` and `pastel-cli`) running as `masternode`
 >   * `LOCAL` host - the user's computer used for performing upgrade, this CAN be the `COLD` node  
 
-1. Download `pastelup` to both `COLD` and `HOT` node (and `LOCAL` host if it is different from `COLD` node)
+### 2.1 Update existing client to latest Pastel Chain version FROM LOCAL Node
+
+1. Download `pastelup` to `LOCAL` node (we assume that node doesn't have pastel application installed)
    * https://download.pastel.network/#latest/
-2. If `LOCAL` host is NOT `COLD` node, copy `masternode.conf` from `COLD` node to `LOCAL` host
-   * `scp cold_host:~/.pastel/masternode.conf .`
-3. Open `masternode.conf` and find `MN-NAME`, `COLLATERAL-TX-ID`, `COLLATERAL-TX-IND` and `MN-PRIV-KEY` for node that will be upgraded
-    ```json
-    {
-        "MN-NAME": {
-            "mnAddress": "MN-IP-ADDRESS:9933",
-            "mnPrivKey": "MN-PRIV-KEY",
-            "txid": "COLLATERAL-TX-ID",
-            "outIndex": "COLLATERAL-TX-IND",
-            "extAddress": "MN-IP-ADDRESS:4444",
-            "extCfg": "",
-            "extKey": "PASTELID"
-        }
-    }     
+2. Update `COLD` node by running the following command from `LOCAL` node
+  ```shell
+  ./pastelup update node remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+  ```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+3. Update `HOT` node by running the following command from `LOCAL` node:
+  ```shell
+  ./pastelup-darwin-amd64 update supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+  ```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+    * rq-server
+    * hermes
+    * supernode
+4. Start all services by running the following command from `LOCAL` node:
+  1. Start Supernode on `HOT` node:
+    ```shell
+    ./pastelup start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
     ```
-4. Stop HOT node
-   * from `HOT` node itself
-     * `pastelup stop node`
-   * OR from `LOCAL` host
-     * `pastelup stop node remote -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
-5. Install Pastel Supernode 
-   * from `HOT` node itself
-     * `pastelup install supernode -r latest -n mainnet -f`
-   * OR from `LOCAL` host
-     * `pastelup install supernode -r latest -n mainnet -f -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
-6. Initialize supernode, this step is only needed to create new version of `masternode.conf` on `HOT` node and to create new version of PastelID (PastelID in Cezanne has new field) 
-   * from `HOT` node itself
-     * `pastelup init supernode --name MN-NAME --new --txid=COLLATERAL-TX-ID --ind=COLLATERAL-TX-IND --pkey=MN-PRIV-KEY --passphrase=<passhrase for new PastelID> --skip-collateral-validation`
-   * OR from `LOCAL` host
-     * `pastelup init supernode remote --name MN-NAME --new --txid=COLLATERAL-TX-ID --ind=COLLATERAL-TX-IND --pkey=MN-PRIV-KEY --passphrase=<passhrase for new PastelID> --skip-collateral-validation -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
-   * in both cases `MN-NAME`, `COLLATERAL-TX-ID`, `COLLATERAL-TX-IND` and `MN-PRIV-KEY` are values acquired from masternode.conf in step 2
-   * Each of these commands might take a long time and might fail and the end, if it fails, re-run it adding flag `--noReindex`
-7. If `init` was successful there will `pasteld` process running on the `HOT` node
-   * from `HOT` node
-     * ```shell
-       $ ps afx | grep pasteld | grep -v grep
-         ... /home/user/pastel/pasteld --datadir=/home/user/.pastel --externalip=111.222.333.444 --txindex=1 --masternode --masternodeprivkey=<....>
-       ```
-8. Update `masternode.conf` on `COLD` node with new `masternode.conf` created on the updated `HOT` node, it will look similar to this
-    ```json
-    {
-        "MN-NAME": {
-            "mnAddress": "MN-IP-ADDRESS:9933",
-            "mnPrivKey": "MN-PRIV-KEY",
-            "txid": "COLLATERAL-TX-ID",
-            "outIndex": "COLLATERAL-TX-IND",
-            "extAddress": "MN-IP-ADDRESS:4444",
-            "extP2P": "MN-IP-ADDRESS:4445",
-            "extCfg": "",
-            "extKey": "NEW-PASTELID"
-        }
-    }     
+  2. _NOTE: In MOST cases you don't need to start pastel application on `COLD` node after upgrade!!!_
+
+### 2.2 Update existing client to latest Pastel Chain version FROM COLD Node
+
+1. Download `pastelup` to `COLD` node
+   * https://download.pastel.network/#latest/
+2. Update `COLD` itself node by running the following command from `COLD` node
+  ```shell
+  ./pastelup update node
+  ```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+3. Update `HOT` node by running the following command from `COLD` node:
+  ```shell
+  ./pastelup-darwin-amd64 update supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+  ```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+    * rq-server
+    * hermes
+    * supernode
+4. Start all services by running the following command from `COLD` node:
+  1. Start Supernode on `HOT` node:
+    ```shell
+    ./pastelup start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
     ```
-9. Re-start `pasteld` on `COLD` node (this is required to pickup updates in `masternode.conf`)
-   * from `COLD` node
-     * `pastelup stop node` OR `./pastel/pastel-cli stop`
-     * `./pastel/pasteld --externalip=<external IP of the host> --reindex --txindex=1`
-10. Re-enable MN
-    * from `COLD` node
-         * `./pastel/pastel-cli masternode start-alias MN-NAME`
-11. Stop executables on the `HOT` node
-    * from `HOT` node itself
-      * `pastelup stop supernode`
-    * OR from `LOCAL` host
-      * `pastelup stop supernode remote -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
-12. Set supernode's executables as systemd services
-    * from `HOT` node itself
-      * `pastelup update install-service --solution supernode`
-13. Start supernode
-    * from `HOT` node itself
-      * `pastelup start supernode`
-    * OR from `LOCAL` host
-      * `pastelup start supernode -ssh-ip <...> --ssh-user <...> --ssh-key <...>`
+  2. _NOTE: In MOST cases you don't need to start pastel application on `COLD` node after upgrade!!!_
+
+### 2.3 Update existing client to latest Pastel Chain version FROM COLD and HOT Node
+
+1. Download `pastelup` to `COLD` and `HOT` nodes
+   * https://download.pastel.network/#latest/
+2. Update `COLD` node by running the following command from `COLD` node itself:
+```shell
+./pastelup update node
+```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+3. Update `HOT` node by running the following command from `HOT` node itself:
+```shell
+./pastelup-darwin-amd64 update supernode
+```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+    * rq-server
+    * hermes
+    * supernode
+4. Start all services by running the following command:
+  1. Start Supernode on `HOT` node:
+    ```shell
+    ./pastelup start supernode
+    ```
+  2. _NOTE: In MOST cases you don't need to start pastel application on `COLD` node after upgrade!!!_
