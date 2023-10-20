@@ -8,7 +8,7 @@ It also contains hassle-free guides and scripts for getting started and managing
 
 ## Release Files
 
-* All required release files can be found [here](https://download.pastel.network/#latest/)
+* All required release files can be found [here](https://download.pastel.network/#latest-release/)
 * [pastelup](https://github.com/pastelnetwork/pastelup/releases)
 * [paslel-core](https://github.com/pastelnetwork/pastel/releases)
 * [goNode](https://github.com/pastelnetwork/gonode/releases)
@@ -30,7 +30,7 @@ The following table shows the recommended hardware requirements for the running 
 | Network: 5Gbps+	| Network: 5Gbps+ | Network: 5Gbps+ |
 
 ### OS / Software 
-* Ubuntu 20.04 Required for running a SuperNode (Note: Full Node and WalletNode clients compatible on MacOS, Windows, and Linux)
+* Ubuntu 22.04 Required for running a SuperNode (Note: Full Node and WalletNode clients compatible on MacOS, Windows, and Linux)
 * Go Installed
 * UPX Installed
 
