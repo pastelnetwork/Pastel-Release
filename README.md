@@ -34,18 +34,23 @@ The following table shows the recommended hardware requirements for the running 
 * Go Installed
 * UPX Installed
 
+_NOTE: Install guides for various client types can be found here - https://github.com/pastelnetwork/pastelup_
+
 _NOTE: Upgrade guides for various client types can be found below._
 
 ## 1. WalletNode: Update existing client to latest Pastel Chain version
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
-2. Stop node
-   * `pastelup stop node`
-3. Install Pastel Walletnode 
-   * `pastelup install walletnode -r latest -n mainnet -f`
-4. Start everything
-   * `pastelup start walletnode`
+2. Run the follwoing command
+```shell
+./pastelup update walletnode
+```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+    * rq-server
+    * walletnode
  
 ## 2. SuperNode: Update existing client to latest Pastel Chain version
 
