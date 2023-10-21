@@ -33,8 +33,6 @@ The following table shows the recommended hardware requirements for the running 
 
 ### OS / Software 
 * Ubuntu 22.04 Required for running a SuperNode (Note: Full Node and WalletNode clients compatible on MacOS, Windows, and Linux)
-* Go Installed
-* UPX Installed
 
 _NOTE: Install guides for various client types can be found here - https://github.com/pastelnetwork/pastelup_
 
