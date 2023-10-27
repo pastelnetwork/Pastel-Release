@@ -6,7 +6,7 @@ The repository hosts Pastel Chain releases.
 
 It also contains hassle-free guides and scripts for getting started and managing Pastel Chain clients.
 
-# ❗️❗️❗️ The latest release is Monet 2.0.0 ❗️❗️❗️
+# ❗ The latest release is Monet 2.0.0 ❗️
 
 ## Release Files
 
@@ -38,7 +38,7 @@ _NOTE: Install guides for various client types can be found here - https://githu
 
 _NOTE: Upgrade guides for various client types can be found below._
 
-## 0. Emergency paslte node update if it stuck due to fork
+## 0. Instruction for updating full node client if halted due to fork during Mainnnet Upgrade
 
 ```shell
   # navigate to where pasteld binary is located:
