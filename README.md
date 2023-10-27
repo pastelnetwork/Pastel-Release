@@ -49,6 +49,8 @@ _NOTE: Upgrade guides for various client types can be found below._
   wget https://github.com/pastelnetwork/pastel/releases/download/v2.0.4/pastel-cli-linux-amd64
   sudo chmod +x pasteld-linux-amd64
   sudo chmod +x pastel-cli-linux-amd64
+  mv ~/.pastel/blocks ~/.pastel/blocksOLD
+  mv ~/.pastel/chainstate ~/.pastel/chainstateOLD
   ./pasteld-linux-amd64 -rescan -reindex -printtoconsole=2 -txindex=1
 ```
 
