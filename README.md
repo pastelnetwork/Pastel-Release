@@ -38,6 +38,21 @@ _NOTE: Install guides for various client types can be found here - https://githu
 
 _NOTE: Upgrade guides for various client types can be found below._
 
+## 0. Emergency paslte node update if it stuck due to fork
+
+```shell
+  # navigate to where pasteld binary is located:
+  ./pastel-cli-linux-amd64 stop
+  mv pasteld-linux-amd64 pasteld-linux-amd64OLD
+  mv pastel-cli-linux-amd64 pastel-cli-linux-amd64OLD
+  wget https://github.com/pastelnetwork/pastel/releases/download/v2.0.4/pasteld-linux-amd64
+  wget https://github.com/pastelnetwork/pastel/releases/download/v2.0.4/pastel-cli-linux-amd64
+  sudo chmod +x pasteld-linux-amd64
+  sudo chmod +x pastel-cli-linux-amd64
+  ./pasteld-linux-amd64 -rescan -reindex -printtoconsole=2 -txindex=1
+```
+
+
 ## 1. WalletNode: Update existing client to latest Pastel Chain version
 
 1. Download `pastelup` to Wallet host
