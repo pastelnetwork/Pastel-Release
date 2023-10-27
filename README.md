@@ -38,7 +38,7 @@ _NOTE: Install guides for various client types can be found here - https://githu
 
 _NOTE: Upgrade guides for various client types can be found below._
 
-## 0. Instruction for updating full node client if halted due to fork during Mainnnet Upgrade
+## 0. FullNode Update Instructions for halted clients during Mainnet Upgrade
 
 ```shell
   # navigate to where pasteld binary is located:
