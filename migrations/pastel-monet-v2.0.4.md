@@ -8,8 +8,8 @@ There are two slightly different migrations path depending on the Pastel softwar
 * `Supernode`
 
 ### `Simple Node` this can be of the following use cases:
-    * Just Pastel Network node because you want to strengthen the Pastel Network
-    * SuperNode Cold Node - the Node that controls remote Supernodes in the COLD/HOT setup. It keeps the funds on the collateral transactions of those Supernodes in its wallet
+* Just Pastel Network node because you want to strengthen the Pastel Network
+* SuperNode Cold Node - the Node that controls remote Supernodes in the COLD/HOT setup. It keeps the funds on the collateral transactions of those Supernodes in its wallet
 
 `Simple Node` setup consists of the single Pastel Network application:
 * `pasteld`
