@@ -210,22 +210,22 @@ Start Supernode back
     all:
     children:
         group1:
-        hosts:
-            host01:
-            ansible_host: <ip>
-            ansible_user: <user>
-            host02:
-            ansible_host: <ip>
-            ansible_user: <user>
+            hosts:
+                host01:
+                ansible_host: <ip>
+                ansible_user: <user>
+                host02:
+                ansible_host: <ip>
+                ansible_user: <user>
     ```
 * pastelup inventory
     ```ansible
     group1:
         hosts:
-        host01:
-            ansible_host: <ip>
-            ansible_user: <user>
-        host02:
-            ansible_host: <ip>
-            ansible_user: <user>
+            host01:
+                ansible_host: <ip>
+                ansible_user: <user>
+            host02:
+                ansible_host: <ip>
+                ansible_user: <user>
     ```
