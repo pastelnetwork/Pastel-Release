@@ -6,7 +6,7 @@ The repository hosts Pastel Chain releases.
 
 It also contains hassle-free guides and scripts for getting started and managing Pastel Chain clients.
 
-# ❗ The latest release is Monet 2.0.0 ❗️
+# ❗ The latest release is Monet 2.0.4 ❗️
 
 ## Release Files
 
