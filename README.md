@@ -10,7 +10,7 @@ It also contains hassle-free guides and scripts for getting started and managing
 
 ## Release Files
 
-* All required release files can be found [here](https://download.pastel.network/#latest-release/)
+* All required release files can be found [here](https://download.pastel.network/#latest-release/mainnet)
 * [pastelup](https://github.com/pastelnetwork/pastelup/releases)
 * [paslel-core](https://github.com/pastelnetwork/pastel/releases)
 * [goNode](https://github.com/pastelnetwork/gonode/releases)
@@ -58,7 +58,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 ## 1. Update WalletNode
 
 1. Download `pastelup` to Wallet host
-   * https://download.pastel.network/#latest/
+   * https://download.pastel.network/#latest-release/pastelup/
 2. Stop pastel software
   ```shell
   ./pastelup-darwin-amd64 stop walletnode
@@ -90,7 +90,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 ### 2.1 Update existing client to latest Pastel Chain version FROM LOCAL host
 
 1. Download `pastelup` to `LOCAL` host (we assume that node doesn't have pastel application installed)
-   * https://download.pastel.network/#latest/
+   * https://download.pastel.network/#latest-release/pastelup/
 2. Stop pastel software on `REMOTE` host by running the following command from `LOCAL` node
   ```shell
   ./pastelup-darwin-amd64 stop supernode remote --ssh-ip <IP address of REMOTE node> --ssh-user <ssh user of REMOTE node> --ssh-key <path to the key of REMOTE node user>
@@ -114,7 +114,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 ### 2.2 Update existing client to latest Pastel Chain version FROM REMOTE host
 
 1. Download `pastelup` to `REMOTE` nodes
-   * https://download.pastel.network/#latest/
+   * https://download.pastel.network/#latest-release/pastelup/
 2. Stop pastel software on `REMOTE` host by running the following command from `REMOTE` node itself:
   ```shell
   ./pastelup-darwin-amd64 stop supernode
@@ -150,7 +150,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 ### 3.1 Update existing client to latest Pastel Chain version FROM LOCAL Node
 
 1. Download `pastelup` to `LOCAL` node (we assume that node doesn't have pastel application installed)
-   * https://download.pastel.network/#latest/
+   * https://download.pastel.network/#latest-release/pastelup/
 2. Stop pastel software on `COLD` node by running the following command from `LOCAL` node
   ```shell
   ./pastelup-darwin-amd64 stop node remote --ssh-ip <IP address of LOCAL node> --ssh-user <ssh user of LOCAL node> --ssh-key <path to the key of LOCAL node user>
@@ -187,7 +187,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 ### 3.2 Update existing client to latest Pastel Chain version FROM COLD Node
 
 1. Download `pastelup` to `COLD` node
-   * https://download.pastel.network/#latest/
+   * https://download.pastel.network/#latest-release/pastelup/
 2. Stop pastel software on `COLD` node by running the following command from `COLD` node itself:
   ```shell
   ./pastelup-darwin-amd64 stop node
@@ -224,7 +224,7 @@ _NOTE: Upgrade guides for various client types can be found below._
 ### 3.3 Update existing client to latest Pastel Chain version FROM COLD and HOT Node
 
 1. Download `pastelup` to `COLD` and `HOT` nodes
-   * https://download.pastel.network/#latest/
+   * https://download.pastel.network/#latest-release/pastelup/
 2. Stop pastel software on `COLD` node by running the following command from `COLD` node itself:
   ```shell
   ./pastelup-darwin-amd64 stop node
