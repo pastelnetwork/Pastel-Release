@@ -6,7 +6,7 @@ The repository hosts Pastel Chain releases.
 
 It also contains hassle-free guides and scripts for getting started and managing Pastel Chain clients.
 
-# ❗ The latest release is Monet 2.0.4 ❗️
+# ❗ The latest release is Vermeer 2.1.0 ❗️
 
 ## Release Files
 
@@ -38,30 +38,34 @@ _NOTE: Install guides for various client types can be found here - https://githu
 
 _NOTE: Upgrade guides for various client types can be found below._
 
-## 0. FullNode Update Instructions for halted clients during Mainnet Upgrade
+## 0. FullNode Update Instructions for halted clients during Vermeer Upgrade
 
 ```shell
   # navigate to where pasteld binary is located:
-  ./pastel-cli-linux-amd64 stop
-  mv pasteld-linux-amd64 pasteld-linux-amd64OLD
-  mv pastel-cli-linux-amd64 pastel-cli-linux-amd64OLD
-  wget https://github.com/pastelnetwork/pastel/releases/download/v2.0.4/pasteld-linux-amd64
-  wget https://github.com/pastelnetwork/pastel/releases/download/v2.0.4/pastel-cli-linux-amd64
-  sudo chmod +x pasteld-linux-amd64
-  sudo chmod +x pastel-cli-linux-amd64
-  mv ~/.pastel/blocks ~/.pastel/blocksOLD
-  mv ~/.pastel/chainstate ~/.pastel/chainstateOLD
-  ./pasteld-linux-amd64 -rescan -reindex -printtoconsole=2 -txindex=1
+  ./pastel-cli stop
+  mv pasteld pasteld-2.0
+  mv pastel-cli pastel-cli-2.0
+  wget https://download.pastel.network/latest-release/mainnet/pasteld/pastel-linux-amd64.zip
+  unzip pastel-linux-amd64.zip
+  sudo chmod +x pasteld
+  sudo chmod +x pastel-cli
+  mv ~/.pastel/blocks ~/.pastel/blocks-2.0
+  mv ~/.pastel/chainstate ~/.pastel/chainstate-2.0
+  ./pasteld -rescan -reindex -txindex=1
 ```
 
 
-## 1. WalletNode: Update existing client to latest Pastel Chain version
+## 1. Update WalletNode
 
 1. Download `pastelup` to Wallet host
    * https://download.pastel.network/#latest/
+2. Stop pastel software
+  ```shell
+  ./pastelup-darwin-amd64 stop walletnode
+  ```
 2. Run the update command
   ```shell
-  ./pastelup update walletnode
+  ./pastelup-darwin-amd64 update walletnode
   ```
   * The above command will update the following applications:
     * pasteld
@@ -70,10 +74,68 @@ _NOTE: Upgrade guides for various client types can be found below._
     * walletnode
 3. Start all services
   ```shell
-  ./pastelup start walletnode
+  ./pastelup-darwin-amd64 start walletnode
   ```
  
-## 2. SuperNode: Update existing client to latest Pastel Chain version
+## 2. Update SuperNode (HOT/HOT)
+
+> NOTE: SuperNode Update assumes that:
+>   * `REMOTE` host has:
+>     * pastel node (`pasteld` and `pastel-cli`) running as `masternode`,
+>     * wallet with collateral transaction for SN(s)
+>     * `masternode.conf` for SN(s)
+>     * All other services: supernode, rq-service, dd-service, hermes
+>   * OPTIONAL: `LOCAL` host - the user's computer used for performing upgrade
+
+### 2.1 Update existing client to latest Pastel Chain version FROM LOCAL host
+
+1. Download `pastelup` to `LOCAL` host (we assume that node doesn't have pastel application installed)
+   * https://download.pastel.network/#latest/
+2. Stop pastel software on `REMOTE` host by running the following command from `LOCAL` node
+  ```shell
+  ./pastelup-darwin-amd64 stop supernode remote --ssh-ip <IP address of REMOTE node> --ssh-user <ssh user of REMOTE node> --ssh-key <path to the key of REMOTE node user>
+  ```
+3. Update `REMOTE` node by running the following command from `LOCAL` node:
+  ```shell
+  ./pastelup-darwin-amd64 update supernode remote --ssh-ip <IP address of REMOTE node> --ssh-user <ssh user of REMOTE node> --ssh-key <path to the key of REMOTE node user>
+  ```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+    * rq-server
+    * hermes
+    * supernode
+    * dd-service
+4. Start all services by running the following command from `LOCAL` node:
+  1. Start Supernode on `HOT` node:
+    ```shell
+    ./pastelup-darwin-amd64 start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+    ```
+### 2.2 Update existing client to latest Pastel Chain version FROM REMOTE host
+
+1. Download `pastelup` to `REMOTE` nodes
+   * https://download.pastel.network/#latest/
+2. Stop pastel software on `REMOTE` host by running the following command from `REMOTE` node itself:
+  ```shell
+  ./pastelup-darwin-amd64 stop supernode
+  ```
+3. Update `REMOTE` node by running the following command from `REMOTE` node itself:
+  ```shell
+  ./pastelup-darwin-amd64 update supernode
+  ```
+  * The above command will update the following applications:
+    * pasteld
+    * pastel-cli
+    * rq-server
+    * hermes
+    * supernode
+    * dd-service
+4. Start all services by running the following command from `REMOTE` node itself:
+  ```shell
+  ./pastelup-darwin-amd64 start supernode
+  ```
+
+## 3. Update SuperNode (COLD/HOT)
 
 > NOTE: SuperNode Update assumes that SuperNode is established via a COLD/HOT mode set-up where:
 >   * `COLD` node has:
@@ -82,19 +144,28 @@ _NOTE: Upgrade guides for various client types can be found below._
 >     * `masternode.conf` for SN(s) that ran on `HOT` node(s)
 >   * `HOT` node has:
 >     * pastel node (`pasteld` and `pastel-cli`) running as `masternode`
->   * `LOCAL` host - the user's computer used for performing upgrade, this CAN be the `COLD` node  
+>     * All other services: supernode, rq-service, dd-service, hermes
+>   * OPTIONAL: `LOCAL` host - the user's computer used for performing upgrade, this CAN be the `COLD` node  
 
-### 2.1 Update existing client to latest Pastel Chain version FROM LOCAL Node
+### 3.1 Update existing client to latest Pastel Chain version FROM LOCAL Node
 
 1. Download `pastelup` to `LOCAL` node (we assume that node doesn't have pastel application installed)
    * https://download.pastel.network/#latest/
-2. Update `COLD` node by running the following command from `LOCAL` node
+2. Stop pastel software on `COLD` node by running the following command from `LOCAL` node
   ```shell
-  ./pastelup update node remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+  ./pastelup-darwin-amd64 stop node remote --ssh-ip <IP address of LOCAL node> --ssh-user <ssh user of LOCAL node> --ssh-key <path to the key of LOCAL node user>
+  ```
+3. Update `COLD` node by running the following command from `LOCAL` node
+  ```shell
+  ./pastelup-darwin-amd64 update node remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
   ```
   * The above command will update the following applications:
     * pasteld
     * pastel-cli
+4. Stop pastel software on `HOT` host by running the following command from `LOCAL` node
+  ```shell
+  ./pastelup-darwin-amd64 stop supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+  ```
 3. Update `HOT` node by running the following command from `LOCAL` node:
   ```shell
   ./pastelup-darwin-amd64 update supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
@@ -105,25 +176,34 @@ _NOTE: Upgrade guides for various client types can be found below._
     * rq-server
     * hermes
     * supernode
+    * dd-service
 4. Start all services by running the following command from `LOCAL` node:
   1. Start Supernode on `HOT` node:
     ```shell
-    ./pastelup start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+    ./pastelup-darwin-amd64 start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
     ```
   2. _NOTE: In MOST cases you don't need to start pastel application on `COLD` node after upgrade!!!_
 
-### 2.2 Update existing client to latest Pastel Chain version FROM COLD Node
+### 3.2 Update existing client to latest Pastel Chain version FROM COLD Node
 
 1. Download `pastelup` to `COLD` node
    * https://download.pastel.network/#latest/
-2. Update `COLD` itself node by running the following command from `COLD` node
+2. Stop pastel software on `COLD` node by running the following command from `COLD` node itself:
   ```shell
-  ./pastelup update node
+  ./pastelup-darwin-amd64 stop node
+  ```
+3. Update `COLD` itself node by running the following command from `COLD` node itself:
+  ```shell
+  ./pastelup-darwin-amd64 update node
   ```
   * The above command will update the following applications:
     * pasteld
     * pastel-cli
-3. Update `HOT` node by running the following command from `COLD` node:
+4. Stop pastel software on `HOT` host by running the following command from `COLD` node
+  ```shell
+  ./pastelup-darwin-amd64 stop supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+  ```
+5. Update `HOT` node by running the following command from `COLD` node:
   ```shell
   ./pastelup-darwin-amd64 update supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
   ```
@@ -133,24 +213,33 @@ _NOTE: Upgrade guides for various client types can be found below._
     * rq-server
     * hermes
     * supernode
-4. Start all services by running the following command from `COLD` node:
+    * dd-service
+6. Start all services by running the following command from `COLD` node:
   1. Start Supernode on `HOT` node:
     ```shell
-    ./pastelup start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
+    ./pastelup-darwin-amd64 start supernode remote --ssh-ip <IP address of HOT node> --ssh-user <ssh user of HOT node> --ssh-key <path to the key of HOT node user>
     ```
   2. _NOTE: In MOST cases you don't need to start pastel application on `COLD` node after upgrade!!!_
 
-### 2.3 Update existing client to latest Pastel Chain version FROM COLD and HOT Node
+### 3.3 Update existing client to latest Pastel Chain version FROM COLD and HOT Node
 
 1. Download `pastelup` to `COLD` and `HOT` nodes
    * https://download.pastel.network/#latest/
-2. Update `COLD` node by running the following command from `COLD` node itself:
+2. Stop pastel software on `COLD` node by running the following command from `COLD` node itself:
+  ```shell
+  ./pastelup-darwin-amd64 stop node
+  ```
+3. Update `COLD` node by running the following command from `COLD` node itself:
 ```shell
-./pastelup update node
+./pastelup-darwin-amd64 update node
 ```
   * The above command will update the following applications:
     * pasteld
     * pastel-cli
+2. Stop pastel software on `HOT` host by running the following command from `HOT` node itself:
+  ```shell
+  ./pastelup-darwin-amd64 stop supernode
+  ```
 3. Update `HOT` node by running the following command from `HOT` node itself:
 ```shell
 ./pastelup-darwin-amd64 update supernode
@@ -161,9 +250,10 @@ _NOTE: Upgrade guides for various client types can be found below._
     * rq-server
     * hermes
     * supernode
+    * dd-service
 4. Start all services by running the following command:
   1. Start Supernode on `HOT` node:
     ```shell
-    ./pastelup start supernode
+    ./pastelup-darwin-amd64 start supernode
     ```
   2. _NOTE: In MOST cases you don't need to start pastel application on `COLD` node after upgrade!!!_
