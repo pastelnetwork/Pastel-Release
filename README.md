@@ -8,6 +8,9 @@ It also contains hassle-free guides and scripts for getting started and managing
 
 # ❗ The latest release is Vermeer 2.1.0 ❗️
 
+> Pastel Daemon version: **v2.1.0-a5ed24295**<br/>
+> Hash (`sha256sum pasteld`) **01326c60bc39668b0b9edf017230fc57c6dc97cd607776245ca6177fc5d137a1**
+
 ## Release Files
 
 * All required release files can be found [here](https://download.pastel.network/#latest-release/mainnet)
