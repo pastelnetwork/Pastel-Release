@@ -9,7 +9,11 @@ It also contains hassle-free guides and scripts for getting started and managing
 # ❗ The latest release is Vermeer 2.1.0 ❗️
 
 > Pastel Daemon version: **v2.1.0-a5ed24295**<br/>
-> Hash (`sha256sum pasteld`) **01326c60bc39668b0b9edf017230fc57c6dc97cd607776245ca6177fc5d137a1**
+> pasteld Hash (`sha256sum pasteld`) **01326c60bc39668b0b9edf017230fc57c6dc97cd607776245ca6177fc5d137a1**<br/><br/>
+> Supernode version: **v2.1.4**
+> Supernode service Hash (`sha256sum supernode-linux-amd64`) **9c31c3581f9a20c259604a9628123e949578b4b4758d6205ea8036df7ce4cc31**<br/><br/>
+> Hermes version: **v2.1.4**
+> Hermes service Hash (`sha256sum hermes-linux-amd64`) **3f1b648ac197543f0e4a3cc7487ee38cb5d03902b48deba60b50db2fc3c4e9f4**
 
 ## Release Files
 
