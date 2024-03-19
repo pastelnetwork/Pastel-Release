@@ -6,7 +6,7 @@ The repository hosts Pastel Chain releases.
 
 It also contains hassle-free guides and scripts for getting started and managing Pastel Chain clients.
 
-# ❗ The latest release is Vermeer 2.1.3 ❗️
+# ❗ The latest release is Vermeer 2.1 ❗️
 
 > Pastel Daemon version: **v2.1.3-7b1e5130e**<br/>
 > pasteld Hash (`sha256sum pasteld`) **d9e60d71b6f02c8fd6a1914efb8fde4a03a871d83dbb76b7251f463c12537412**<br/><br/>
