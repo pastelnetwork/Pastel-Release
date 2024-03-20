@@ -10,10 +10,10 @@ It also contains hassle-free guides and scripts for getting started and managing
 
 > Pastel Daemon version: **v2.1.3-7b1e5130e**<br/>
 > pasteld Hash (`sha256sum pasteld`) **d9e60d71b6f02c8fd6a1914efb8fde4a03a871d83dbb76b7251f463c12537412**<br/><br/>
-> Supernode version: **v2.1.4**<br/>
-> Supernode service Hash (`sha256sum supernode-linux-amd64`) **9c31c3581f9a20c259604a9628123e949578b4b4758d6205ea8036df7ce4cc31**<br/><br/>
-> Hermes version: **v2.1.4**<br/>
-> Hermes service Hash (`sha256sum hermes-linux-amd64`) **3f1b648ac197543f0e4a3cc7487ee38cb5d03902b48deba60b50db2fc3c4e9f4**
+> Supernode version: **v2.1.5**<br/>
+> Supernode service Hash (`sha256sum supernode-linux-amd64`) **12bb2a11b4860dd37e66cfbfc7c08604d44a69219ea80eeca2bd704a65254373**<br/><br/>
+> Hermes version: **v2.1.5**<br/>
+> Hermes service Hash (`sha256sum hermes-linux-amd64`) **7caeee7cde87dcfbef8d5bb5741693952a65556c3e856ceace0b997be9e83030**
 
 ## Release Files
 
