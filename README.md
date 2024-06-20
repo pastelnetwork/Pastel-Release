@@ -6,10 +6,10 @@ The repository hosts Pastel Chain releases.
 
 It also contains hassle-free guides and scripts for getting started and managing Pastel Chain clients.
 
-# ❗ The latest release is Matisse 2.2 ❗️
+# ❗ The latest release is Matisse 2.2.1 ❗️
 
-> Pastel Daemon version: **v2.2.0-6d313f998**<br/>
-> pasteld Hash (`sha256sum pasteld`) **6b4522bc6a4a9429a5f782c732a4dbda55731c14b5c3266c467444c133d68bc1**<br/><br/>
+> Pastel Daemon version: **v2.2.1-unk**<br/>
+> pasteld Hash (`sha256sum pasteld`) **b352f3075a8b1ecbf7694d66fe82a654fc5ea8a2577b901f9ccb320c27e736bd**<br/><br/>
 > Supernode version: **v2.2.0**<br/>
 > Supernode service Hash (`sha256sum supernode-linux-amd64`) **9d12b76c8f9ecb04c8557e3447cf2e4f01d50c312f32ec469e6f57213092ee9b**<br/><br/>
 > Hermes version: **v2.2.0**<br/>
